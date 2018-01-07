@@ -14,6 +14,7 @@ export const request = (url, method = 'GET', reqBody, opts = {}) => {
   const requestObject = {
     method,
     headers: {
+      Authenticaion: `Bearer ${window.localStorage.getItem('jwt')}`,
       'Content-Type': 'application/json',
     },
   };

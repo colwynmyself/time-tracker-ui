@@ -4,12 +4,16 @@ import { ConnectedRouter } from 'react-router-redux';
 import PropTypes from 'prop-types';
 
 import Home from './containers/Home';
+import Login from './containers/Login';
 
 function App(props) {
   return (
     <div className="App">
       <ConnectedRouter history={props.history}>
-        <Route exact path="/" component={Home} />
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+        </div>
       </ConnectedRouter>
     </div>
   );

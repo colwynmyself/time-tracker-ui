@@ -16,12 +16,13 @@ import registerServiceWorker from './registerServiceWorker';
 const history = createBrowserHistory();
 const historyMiddleware = routerMiddleware(history);
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   combineReducers({
     ...indexReducer,
     routing: routerReducer,
   }),
-  compose(
+  composeEnhancers(
     applyMiddleware(thunkMiddleware),
     applyMiddleware(historyMiddleware),
   ),
