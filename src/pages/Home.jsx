@@ -6,7 +6,7 @@ import '../styles/Home.css';
 function Home(props) {
   return (
     <div>
-      Users in system: {props.users.requestingList ? 'Loading...' : props.users.list.map(u => (
+      Users in system: {props.isLoading ? 'Loading...' : props.userList.map(u => (
         <span key={u.id}>{u.name}</span>
       ))}
     </div>
@@ -14,13 +14,16 @@ function Home(props) {
 }
 
 Home.propTypes = {
-  users: PropTypes.shape({
-    requestingList: PropTypes.bool,
-    list: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-    })),
-  }).isRequired,
+  isLoading: PropTypes.bool,
+  userList: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+  })),
+};
+
+Home.defaultProps = {
+  isLoading: true,
+  userList: [],
 };
 
 export default Home;

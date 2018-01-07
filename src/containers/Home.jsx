@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 
 import Home from '../pages/Home';
 import { requestUserList } from '../actions/users';
+import { getUserList } from '../selectors/users';
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => getUserList(state);
 
 const mapDispatchToProps = (dispatch) => {
   dispatch(requestUserList());
