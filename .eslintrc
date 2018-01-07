@@ -1,0 +1,11 @@
+{
+  "extends": "airbnb",
+  "globals": {
+    "window": true,
+    "document": true
+  },
+  "rules": {
+    "no-underscore-dangle": "off",
+    "react/jsx-filename-extension": "off"
+  }
+}
