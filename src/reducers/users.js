@@ -22,7 +22,7 @@ export default function users(state = initialState, action) {
     case actions.USER_LIST_RECEIVED: {
       return Object.assign({}, state, {
         requestingList: false,
-        list: action.data.users,
+        list: action.data,
       });
     }
 
